@@ -13,5 +13,5 @@ export const postTransactions = async (file) => {
 	const data = await res.json();
 
   console.log(data.transactions);
-	transactions.set(data.transactions);
+	transactions.set(data);
 };
