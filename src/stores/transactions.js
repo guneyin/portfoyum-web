@@ -1,6 +1,10 @@
-import { writable, derived } from 'svelte/store';
+import { writable } from 'svelte/store';
+import { browser } from '$app/env';
 
-export const transactions = writable([]);
+const getTransactions = () => browser && (JSON.parse(localStorage.getItem("transactions")) || []);
+
+export const transactions = writable(getTransactions());
+transactions.subscribe( val => browser && (localStorage.setItem("transactions", JSON.stringify(val))));
 
 export const postTransactions = async (file) => {
   const formData = new FormData();
@@ -12,6 +16,6 @@ export const postTransactions = async (file) => {
   });
 	const data = await res.json();
 
-  console.log(data.transactions);
+  console.log(data);
 	transactions.set(data);
 };

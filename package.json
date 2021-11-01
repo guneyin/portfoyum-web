@@ -24,6 +24,7 @@
 	"dependencies": {
 		"daisyui": "^1.14.2",
 		"kutty": "^0.5.2",
-		"moment": "^2.29.1"
+		"moment": "^2.29.1",
+		"svelte-persistent-store": "^0.1.6"
 	}
 }

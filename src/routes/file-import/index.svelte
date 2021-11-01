@@ -51,4 +51,4 @@
 	</div>
 {/if}
 
-<TradingTable />
+	<TradingTable />
