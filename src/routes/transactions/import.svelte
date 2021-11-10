@@ -1,6 +1,6 @@
 <script>
 	import {postTransactions, transactions} from "@stores/transactions"
-	import TradingTable from "$lib/TradingTable2.svelte";
+	import TradingTable from "$lib/TradingTable.svelte";
 
 	let files = [];
 	let fileUploading = false;
@@ -49,6 +49,8 @@
 			</div>
 		</div>
 	</div>
+{:else}
+	<TradingTable />
 {/if}
 
-	<TradingTable />
+

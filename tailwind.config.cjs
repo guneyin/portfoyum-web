@@ -10,7 +10,7 @@ const config = {
 	daisyui: {
 		styled: true,
 		themes: [
-			'corporate'
+			'cupcake'
 		  ],
 		base: true,
 		utils: true,
