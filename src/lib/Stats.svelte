@@ -13,8 +13,8 @@
         </svg>
       </div> 
       <div class="stat-title">Toplam Portföy</div> 
-      <div class="stat-value">{ new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format($stats.totalBuy) }</div> 
-      <div class="stat-desc">Jan 1st - Feb 1st</div>
+      <div class="stat-value">{ new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format($stats.totalPrice) }</div> 
+      <div class="stat-desc">{ new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format($stats.totalBuy) }</div>
     </div> 
     <div class="stat">
       <div class="stat-figure text-secondary">
