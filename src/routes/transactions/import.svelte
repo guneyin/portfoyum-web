@@ -1,5 +1,5 @@
 <script>
-	import {postTransactions, transactions} from "@stores/transactions"
+	import { postTransactions, transactions } from "@stores/transactions"
 	import TradingTable from "$lib/TradingTable.svelte";
 
 	let files = [];

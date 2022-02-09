@@ -9,7 +9,8 @@ const config = {
             resolve: {
                 alias: {
                     '@lib': path.resolve('./src/lib'),
-                    '@stores': path.resolve('./src/stores')
+                    '@stores': path.resolve('./src/stores'),
+                    '@api': path.resolve('./src/api'),
                 }
             }
         }

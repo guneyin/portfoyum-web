@@ -1,8 +1,10 @@
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { stats, getStats } from '@stores/stats';
 
-  onMount(async () => getStats());    
+  onMount(async () => {
+    await getStats();
+  });
 </script>
 
 <div class="w-full shadow stats">
@@ -23,8 +25,8 @@
         </svg>
       </div> 
       <div class="stat-title">Kazanç</div> 
-      <div class="stat-value">4,200</div> 
-      <div class="stat-desc text-success">↗︎ 400 (22%)</div>
+      <div class="stat-value">{ new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format($stats.gainByPrice) }</div> 
+      <div class="stat-desc text-success">↗︎ { new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format($stats.gainByPercent) }%</div>
     </div> 
     <div class="stat">
       <div class="stat-figure text-secondary">

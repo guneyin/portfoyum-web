@@ -3,15 +3,15 @@ const config = {
 	purge: [
 		"./src/**/*.{html,js,svelte,ts}",
 	],
-	theme: {
-		extend: {},
-	},
-	plugins: [require("daisyui")],
+	plugins: [
+		require("daisyui")
+	],
 	daisyui: {
 		styled: true,
 		themes: [
+			'light',
 			'cupcake'
-		  ],
+		],
 		base: true,
 		utils: true,
 		logs: true,

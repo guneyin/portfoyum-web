@@ -1,11 +1,10 @@
 import { localStore } from "@stores/localStore";
+import * as api from '@api';
 
 export const stats = localStore('stats', {});
 
-export const getStats = async () => {
-    const url = `http://127.0.0.1:3001/api/v1/stats`;
-    const res = await fetch(url);
-    const data = await res.json();
+export async function getStats() {
+    const data = await api.stats.grab();
 
     stats.set(data);
 };

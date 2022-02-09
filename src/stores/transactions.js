@@ -1,17 +1,11 @@
 import { localStore } from "@stores/localStore";
 import { get } from 'svelte/store';
+import * as api from '@api';
 
 export const transactions = localStore('transactions', []);
 
 export const postTransactions = async (file) => {
-  const formData = new FormData();
-  formData.append('dataFile', file);
-	const url = `http://127.0.0.1:3001/api/v1/transactions/import`;
-	const res = await fetch(url, {
-    method: 'POST',
-    body: formData
-  });
-	const data = await res.json();
+  const data = await api.transactions.uploadFile(file);
 
   transactions.set(data)
 };
@@ -19,15 +13,7 @@ export const postTransactions = async (file) => {
 export const saveTransactions = async () => {
   let data = get(transactions);
 
-	const url = `http://127.0.0.1:3001/api/v1/transactions/save`;
-	const req = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
+  const req = await api.transactions.save(data);
 
   return req.status == 200;
 };

@@ -22,10 +22,21 @@
     </div> 
 
     <div class="flex-none">
-      <div class="avatar">
-        <div class="rounded-full w-10 h-10 m-1">
-          <img src="https://i.pravatar.cc/500?img=32" alt="">
-        </div>
+      <div class="dropdown dropdown-end">
+        <button class="btn btn-outline btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">   
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
+          </svg>
+        </button> 
+        
+        <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+          <li>
+            <a href="/auth/me">Profil</a>
+          </li> 
+          <li>
+            <a href="/auth/logout">Oturumu Kapat</a>
+          </li> 
+        </ul>
       </div>
     </div>
-  </div>
+  </div>  
