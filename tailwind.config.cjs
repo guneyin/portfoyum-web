@@ -8,10 +8,7 @@ const config = {
 	],
 	daisyui: {
 		styled: true,
-		themes: [
-			'light',
-			'cupcake'
-		],
+		themes: true,
 		base: true,
 		utils: true,
 		logs: true,

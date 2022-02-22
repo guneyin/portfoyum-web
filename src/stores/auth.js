@@ -5,8 +5,8 @@ const authStore = localStore('auth', {});
 
 export const data = async () => await get(authStore);
 
-export async function set(data) {
-    return await authStore.set(data);
+export async function set(d) {
+    return await authStore.set(d);
 }
 
 // export async function grab() {
@@ -14,5 +14,5 @@ export async function set(data) {
 // }
 
 export async function flush() {
-    return await auth.set({})
+    return await authStore.set({})
 }

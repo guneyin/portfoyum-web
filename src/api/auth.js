@@ -1,4 +1,5 @@
 import jwt_decode from "jwt-decode";
+import * as cookie from "cookie";
 import { post, variables } from "@api";
 import * as auth from "../stores/auth.js";
 
@@ -19,7 +20,26 @@ export async function login (data) {
         };
 
         await auth.set(authObj);
-    }
 
-    return req.status === 200;
+        // console.log('set-cookie');
+        //
+        const header = {
+            'Set-Cookie': cookie.serialize('session_id', decoded.id, {
+                httpOnly: true,
+                maxAge: 60 * 60 * 24 * 7,
+                sameSite: 'strict',
+                path: '/'
+            })
+        };
+
+        return {
+            status: 200,
+            headers: header,
+            body: authObj,
+        }
+    } else {
+        return {
+            status: 401,
+        }
+    }
 }

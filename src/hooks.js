@@ -1,43 +1,29 @@
-import * as auth from '@stores/auth';
+import * as cookie from "cookie";
+//import Cookies from 'js-cookie';
 
-/** @type {import('@sveltejs/kit').Handle} */
-export async function handle({ request, resolve }) {
-    const response = await resolve(request);
-    let authData = await auth.data();
-
-    console.log(authData);
-  // if (cookies.token) {
-  //   request.locals.token = cookies.token;
-  //   request.locals.authenticated = true;
-  //
-  // }
-
-  return response;
-}
-
+// /** @type {import('@sveltejs/kit').Handle} */
+// export async function handle({ event, resolve }) {
+//     //const cookies = cookie.parse(request.headers.cookie || "");
+//     const cookies = cookie.parse(event.request.headers.get("cookie") || "");
+//
+//     //const session_id = cookies.session_id;
+//     const session_id = cookies.session_id;
+//     console.log(session_id);
+//
+//
+//   // if (cookies.token) {
+//   //   request.locals.token = cookies.token;
+//   //   request.locals.authenticated = true;
+//   //
+//   // }
+//
+//   return await resolve(event);
+// }
 
 // /** @type {import('@sveltejs/kit').GetSession} */
-// export function getSession(event) {
-//   const auth = grab();
-//
-//   console.log(auth.user);
-//
-//   return {
-//     authenticated: !!auth.user,
-//     user: auth.user,
-//     token: auth.access_token,
-//   }
-//
-//   // return event.locals.user
-//   //     ? {
-//   //       user: {
-//   //         // only include properties needed client-side —
-//   //         // exclude anything else attached to the user
-//   //         // like access tokens etc
-//   //         name: event.locals.user.name,
-//   //         email: event.locals.user.email,
-//   //         avatar: event.locals.user.avatar
-//   //       }
-//   //     }
-//   //     : {};
+// export function getSession(headers) {
+//     const cookies = cookie.parse(event.request.headers.get("cookie") || "");
+//     //
+//     // console.log(cookies.session_id)
 // }
+
