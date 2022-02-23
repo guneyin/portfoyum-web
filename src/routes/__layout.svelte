@@ -15,10 +15,21 @@
     });
 </script>
 
-<div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
-    <Sidebar />  
+<Navbar />
 
-    <div class="flex-1 h-full overflow-x-hidden overflow-y-auto">
-        <Navbar /> 
+<div class="flex overflow-hidden bg-gray-50 pt-16">
+    <Sidebar />
+
+    <div class="pt-6 px-4 h-full w-full relative lg:ml-64">
+        <slot/>
     </div>
 </div>
+<!--<div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">-->
+
+
+<!--    <div class="flex-1 h-full overflow-x-hidden overflow-y-auto">-->
+
+
+<!--        <slot></slot>-->
+<!--    </div>-->
+<!--</div>-->
