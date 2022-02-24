@@ -2,13 +2,30 @@
     import { onMount } from "svelte";
     import moment from 'moment';
     import { transactions } from '@api';
+    import { postTransactions } from "@stores/transactions"
+    import { goto } from "$app/navigation";
 
-    var data = []
+    let data = [];
+    let fileinput;
 
     onMount(async () => {
         data = await transactions.grab();
-    })
+    });
+
+    const onFileSelected = async (e) =>{
+      let file = e.target.files[0];
+
+      await postTransactions(file);
+      goto("transactions/import");
+    };
 </script>
+
+<div class="alert my-5">
+  <div class="flex-1">
+    <button class="btn btn-sm btn-accent" on:click={()=>{fileinput.click();}}>Dosyadan Yükle</button>
+    <input style="display:none" type="file" accept=".csv, .jpeg" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
+  </div> 
+</div>
 
 <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
