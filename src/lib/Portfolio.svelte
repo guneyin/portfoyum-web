@@ -22,8 +22,6 @@
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sembol</th> 
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Miktar</th> 
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tutar</th> 
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ortalama Maliyet</th> 
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Karşılaştır: USD</th>
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -53,16 +51,6 @@
 
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     { new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(item.price) }
-                </td>
-
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  { new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(item.compared.price) }
-              
-                </td>
-
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  { new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'USD' }).format(item.compared.total_price) }
-          
                 </td>
               </tr>
               {/each}

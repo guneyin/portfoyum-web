@@ -23,19 +23,20 @@ async function send(method, path, data) {
     } else if (!!data) {
         opts.headers['Content-Type'] = 'application/json';  
         opts.body = JSON.stringify(data); 
-    }
+    };
 
     const authData = await authStore.data();
 
     if (!!authData.access_token) {
         opts.headers['Authorization'] = 'Bearer ' + authData.access_token;
-    }
+    };
 
     const res = await fetch(url, opts);
 
-    // if (res.status === 401) {
-    //     res.redirect = '/';
-    // };
+    if (res.status === 401) {
+        console.log("Unauthorized");
+        await authStore.flush();
+    };
 
     return res;
 }

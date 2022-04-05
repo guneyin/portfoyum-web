@@ -3,7 +3,7 @@
     import { goto } from '$app/navigation';
 
     let email = 'guneyin@gmail.com';
-    let password = 'dondurma77';
+    let password = 'deneme123';
 
     let loginData = {
       email,

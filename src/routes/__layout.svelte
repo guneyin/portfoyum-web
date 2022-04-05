@@ -15,16 +15,16 @@
     });
 </script>
 
-<div class="h-screen overflow-hidden flex">
+<div class="h-screen overflow-hidden flex">  
     <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800 w-full">
         <Sidebar />
 
         <main class="main flex flex-col flex-grow">
-            <Navbar />
+            <Navbar /> 
 
-            <div class="main-content flex flex-col flex-grow p-4">
+            <div class="main-content overflow-visible flex flex-col flex-grow p-4">
                 <slot></slot>
             </div>
-        </main>
+        </main>          
   </div>
-</div>
+</div> 
